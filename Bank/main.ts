@@ -1,8 +1,10 @@
 import express from "express";
 import getpetitionstatus from "./resolvers/get/getpepitionstatus.ts";
+import responder from  "./resolvers/get/responder.ts"
 
 const app = express();
 
+app.get("/hola",responder)
 app.get("/petition",getpetitionstatus);
 app.get("/account",);
 

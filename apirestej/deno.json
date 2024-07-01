@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "dev": "deno run --watch --allow-read --allow-env main.ts"
+  },
+  "imports": {
+    "express":"npm:express@4.19.2",
+    "mongoose":"npm:mongoose@8.4.4"
+  }
+}
