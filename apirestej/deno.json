@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "dev": "deno run --watch --allow-read --allow-env main.ts"
+    "dev": "deno run --watch --allow-all main.ts"
   },
   "imports": {
     "express":"npm:express@4.19.2",
