@@ -19,7 +19,8 @@ try {
   Deno.exit()
 }
 
-
 const app = express();
+
+app.get("/api/mascotas",)
 
 app.listen(8000, ()=>{console.log("API/REST on port 8000")})
