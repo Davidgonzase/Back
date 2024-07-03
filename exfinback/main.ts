@@ -4,7 +4,7 @@ import {ApolloServer} from "@apollo/server"
 import {load} from "https://deno.land/std@0.224.0/dotenv/mod.ts"
 import { typeDefs } from "./gql/schema.ts";
 import { Query } from "./resolvers/Query.ts";
-import { Mutations } from "./resolvers/Mutations.ts";
+import { Mutation } from "./resolvers/Mutations.ts";
 import { Contact } from "./resolvers/Contact.ts";
 
 const env = await load()
@@ -26,7 +26,7 @@ if(!MONGO_KEY||MONGO_KEY==""){
 
 const server = new ApolloServer({typeDefs,resolvers:{
   Query,
-  Mutations,
+  Mutation,
   Contact
 }})
 

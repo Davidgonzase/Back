@@ -20,7 +20,7 @@ export type contacmodeltype = mongoose.Document & Omit<Contactdb, "id">
 contactschema.pre("save",async function (next){
     const result = await mongoose.models.Contact.findOne({phone:this.phone})
     if(result){
-        if(result.phone == this.phone)next(new GraphQLError("Ya existe un usuario con mismo telefono",{extensions:{code:"ALREADY_EXISTS"}}))
+        if(result.phone == this.phone && result._id != this.id)next(new GraphQLError("Ya existe un usuario con mismo telefono",{extensions:{code:"ALREADY_EXISTS"}}))
     }
 
     next()

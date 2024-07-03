@@ -29,13 +29,13 @@ export const addContact = async (name_surname: string, phone: string): Promise<s
         const location = await countryres.json();
         if (location.length == 0) throw new GraphQLError("No country", { extensions: { code: "INTERNAL_ERROR" } })
 
-        const capitallocation = await fetch('https://api.api-ninjas.com/v1/geocoding?city=' + location.capital + "&country=" + country, {
+        const capitallocation = await fetch('https://api.api-ninjas.com/v1/geocoding?city=' + location[0].capital + "&country=" + country, {
             headers: {
                 'X-Api-Key': API_KEY
             },
         })
         if (!capitallocation) throw new GraphQLError("API Error", { extensions: { code: "INTERNAL_ERROR" } })
-        const truelocation = await countryres.json();
+        const truelocation = await capitallocation.json();
         if (truelocation.length == 0) throw new GraphQLError("No city", { extensions: { code: "INTERNAL_ERROR" } })
 
         const longitude = truelocation[0].longitude

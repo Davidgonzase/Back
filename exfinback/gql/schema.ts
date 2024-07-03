@@ -1,10 +1,10 @@
 export const typeDefs=`#graphql
 type Contact {
-    name_surname:String
-    phone:String
-    hour:String
-    country:String
-    id:ID
+    name_surname:String!
+    phone:String!
+    hour:String!
+    country:String!
+    id:ID!
 }
 
 type Query {
@@ -12,11 +12,10 @@ type Query {
     getContacts:[Contact!]!
 }
 
-type Mutations {
+type Mutation {
     addContact(nameandsurname:String!,phone:String!):String!
     deleteContact(id:ID!):Boolean!
-    #updateContact(id:ID!,ameandsurname:String,phone:String):Contact
+    updateContact(id:ID!,nameandsurname:String,phone:String):Contact!
+
 }
-
 `
-
