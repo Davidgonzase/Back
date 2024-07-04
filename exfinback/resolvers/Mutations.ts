@@ -1,7 +1,7 @@
 import { Contactdb } from "../types.ts";
-import { addContact } from "./mutations.ts/addcontact.ts";
-import { deleteContact } from "./mutations.ts/deletecontact.ts";
-import { updateContact } from "./mutations.ts/updatecontac.ts";
+import { addContact } from "./mutations/addcontact.ts";
+import { deleteContact } from "./mutations/deletecontact.ts";
+import { updateContact } from "./mutations/updatecontac.ts";
 
 export const Mutation={
     addContact: (_:unknown,args:{nameandsurname:string,phone:string}):Promise<string>=>{
